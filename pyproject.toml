@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repeat-xai"
+description = "REPEAT: Improving Uncertainty Estimation in Representation Learning Explainability"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Kristoffer K. Wickstrøm" }]
+keywords = [
+    "explainability",
+    "interpretability",
+    "xai",
+    "representation-learning",
+    "uncertainty",
+    "pytorch",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "relax-xai>=0.2.0",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Wickstrom/REPEAT"
+Documentation = "https://github.com/Wickstrom/REPEAT#readme"
+Repository = "https://github.com/Wickstrom/REPEAT"
+Paper = "https://arxiv.org/abs/2412.08513"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "scikit-image",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = { attr = "repeat_xai.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# The scikit-image parity tests are skipped entirely when scikit-image is not
+# installed, which requires imports below the importorskip call.
+"tests/test_thresholds.py" = ["E402"]

@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use REPEAT in your research, please cite the paper below."
+type: conference-paper
+title: "REPEAT: Improving Uncertainty Estimation in Representation Learning Explainability"
+conference:
+  name: "Proceedings of the AAAI Conference on Artificial Intelligence"
+  volume: 39
+  issue: 8
+  pages: "8341-8350"
+year: 2025
+doi: 10.1609/aaai.v39i8.32900
+repository-code: "https://github.com/Wickstrom/REPEAT"
+keywords:
+  - explainability
+  - interpretability
+  - representation learning
+  - uncertainty estimation
+authors:
+  - given-names: Kristoffer K.
+    family: "Wickstrøm"
+  - given-names: Thea
+    family: "Brüsch"
+  - given-names: Michael C.
+    family: Kampffmeyer
+  - given-names: Robert
+    family: Jenssen
